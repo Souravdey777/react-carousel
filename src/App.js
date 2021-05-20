@@ -10,6 +10,10 @@ function App() {
       title: "Second Block",
       images: ["url5", "url6", "url7", "url8"],
     },
+    {
+      title: "Second Block",
+      images: ["url5", "url6", "url7", "url8"],
+    },
   ];
   return (
     <div>

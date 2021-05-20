@@ -4,8 +4,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding-bottom: 20px;
-  overflow-x: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -26,4 +25,8 @@
   align-items: center;
   color: white;
   font: 24px bold;
+}
+
+.image:last-child {
+  margin-right: 2%;
 }
