@@ -1,0 +1,29 @@
+.carouselRoot {
+  display: flex;
+  height: 200px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin: 100px 1%;
+}
+
+.carouselRoot::-webkit-scrollbar {
+  display: none;
+}
+
+.image {
+  min-width: 23%;
+  height: 200px;
+  margin: 1%;
+  background-color: sandybrown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font: 24px bold;
+}
