@@ -11,6 +11,14 @@
   margin: 100px 1%;
 }
 
+.title {
+  text-align: center;
+  margin: 64px 32px;
+  font-size: 32px;
+  font-weight: 900;
+  transition: 225ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 .carouselRoot::-webkit-scrollbar {
   display: none;
 }
@@ -19,14 +27,46 @@
   min-width: 23%;
   height: 200px;
   margin: 1%;
-  background-color: sandybrown;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: sandybrown;
   font: 24px bold;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ddd, #fafafa, #ddd);
+  background-size: 400% 400%;
+  animation: gradient 2s ease infinite;
 }
 
 .image:last-child {
   margin-right: 2%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.buttonRoot {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.buttonRoot button {
+  cursor: pointer;
+  background-color: sandybrown;
+}
+
+.buttonRoot button:disabled {
+  background-color: grey;
 }

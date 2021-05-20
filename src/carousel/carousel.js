@@ -8,7 +8,7 @@ function Carousel(props) {
   const [blockPosition, setBlockPosition] = useState(0); // currectly focus block value
 
   function onclickLeft() {
-    console.log((blockPosition > 0 ? blockPosition - 1 : 0) * 4);
+    // console.log((blockPosition > 0 ? blockPosition - 1 : 0) * 4);
     scrollArea.current.scrollTo({
       left:
         scroller[(blockPosition > 0 ? blockPosition - 1 : 0) * 4].offsetLeft -
@@ -17,7 +17,7 @@ function Carousel(props) {
     });
     setBlockPosition(blockPosition > 0 ? blockPosition - 1 : 0);
   }
-  
+
   function onclickRight() {
     scrollArea.current.scrollTo({
       left:
@@ -36,24 +36,43 @@ function Carousel(props) {
 
   return (
     <>
-      <div onClick={onclickLeft}>Left</div>
+      <div className={styles.title}>{CarouselObj[blockPosition].title}</div>
       <div className={styles.carouselRoot} ref={scrollArea}>
         {CarouselObj.map((block, blockid) =>
-          block.images.map((image, id) => (
-            <div
-              className={styles.image}
-              key={id}
-              ref={(ref) => {
-                scroller[id + blockid * 4] = ref;
-              }}
-            >
-              {id + blockid * 4}
-              {/* <img src={image} alt={id + blockid * 4} /> */}
-            </div>
-          ))
+          block.images.map(
+            (
+              image,
+              id // This image ie. url string is not used. For the example. It will come in line no. 56 within <img/> tag
+            ) => (
+              <div
+                className={styles.image}
+                key={id}
+                ref={(ref) => {
+                  scroller[id + blockid * 4] = ref;
+                }}
+              >
+                {id + blockid * 4}
+              </div>
+              // <img src={image} alt={id + blockid * 4} />
+              // The boxes represent the images once the image is loaded it will coming in place of the loader.
+            )
+          )
         )}
       </div>
-      <div onClick={onclickRight}>Right</div>
+      <div className={styles.buttonRoot}>
+        <button
+          disabled={blockPosition === 0 ? true : false}
+          onClick={onclickLeft}
+        >
+          ⟵
+        </button>
+        <button
+          disabled={blockPosition === CarouselObj.length - 1 ? true : false}
+          onClick={onclickRight}
+        >
+          ⟶
+        </button>
+      </div>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Carousel from "./carousel/carousel";
 
 function App() {
+  // Given JSON format
   const CarouselObj = [
     {
       title: "First Block",
@@ -11,7 +12,7 @@ function App() {
       images: ["url5", "url6", "url7", "url8"],
     },
     {
-      title: "Second Block",
+      title: "Third Block",
       images: ["url5", "url6", "url7", "url8"],
     },
   ];
